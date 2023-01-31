@@ -10,7 +10,14 @@ export LC_NUMERIC="en_US.UTF-8"
 TIMEFORMAT=%R
 
 DIR="time.csv"
-echo "" >$DIR
+echo -n "Input" >$DIR
+
+for test_number in $(seq 1 $N)
+do
+  echo -n ",Test $test_number" >> $DIR
+done
+
+printf "\n" >> $DIR
 
 for i in input/*.in
 do
