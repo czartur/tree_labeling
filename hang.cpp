@@ -71,7 +71,7 @@ int solve(){
             level[cur_h].pop();
             if((int) adj[u].size() == 1) continue; // folha
 
-            // NAGAI PINTA
+            // colors
             for(int p=0; (1<<p) <= 'Z'-'A'; p++){ // itera nas letras
                 int l0 = 0, l1 = 0;                
                 for(auto v : adj[u]) {
@@ -87,7 +87,7 @@ int solve(){
                 if(l1 == l0) mimic[u] += (1<<p);
             }
             
-            // NAGAI CONTA
+            // counts
             for(auto v : adj[u]){
                 if(height[v] == cur_h - 1) continue;
                 
